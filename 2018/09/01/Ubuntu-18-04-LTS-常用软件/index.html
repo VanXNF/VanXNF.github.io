@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Ubuntu 18.04 LTS 常用软件 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2018-09-01 19:27" pubdate>
+      September 1, 2018 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      861 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Ubuntu 18.04 LTS 常用软件</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><p>&nbsp;&nbsp;首先从 <a target="_blank" rel="noopener" href="https://music.163.com/#/download">https://music.163.com/#/download</a> 下载最新版本。然后使用以下命令安装：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> dpkg -i netease-cloud-music_<span class="hljs-number">1</span>.<span class="hljs-number">1</span>.<span class="hljs-number">0</span>_amd<span class="hljs-number">64</span>_ubuntu<span class="hljs-number">16</span>.<span class="hljs-number">04</span>.deb</code></pre>
+<p>&nbsp;&nbsp;安装完成后发现桌面图标打不开面板，搜索发现两个有效的解决方案，第二种方案揭示了问题的本质，<del>但目前对于 gnome-shell，第二种方案需要另写一个脚本来运行，并且存在每次启动都是全新启动，无法读取之前设置的问题。</del>推荐使用第二种方案。</p>
+<p>&nbsp;&nbsp;<a target="_blank" rel="noopener" href="https://notes.ijustplay.cn/software/ubuntu-netease-cloud-music.html">Ubuntu 18.04 网易云音乐无法打开最简单解决办法</a></p>
+<p>&nbsp;&nbsp;<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/277330447/answer/478510195">Ubuntu 18.04 装了网易云音乐，难道只能用 sudo 启动吗？ - Fancy的回答 - 知乎</a></p>
+<p>&nbsp;&nbsp;如果遇到无法保存配置的问题，以下是解决方案：</p>
+<p>&nbsp;&nbsp;在 Home 目录下搜索 netease-cloud-music 可以发现在 home 下的 <code>.cache</code> 和 <code>.config</code> 下都存在这个文件夹，对于 <code>.cache</code> 下的文件夹直接删除，对于 <code>.config</code> 下的文件夹，需要改变所有者，执行以下命令：</p>
+<pre><code class="hljs properties"><span class="hljs-attr">cd</span> <span class="hljs-string">~/.config</span>
+<span class="hljs-attr">sudo</span> <span class="hljs-string">chown -R vanxnf netease-cloud-music</span>
+<span class="hljs-attr">sudo</span> <span class="hljs-string">chown -R vanxnf:vanxnf netease-cloud-music</span></code></pre>
+<p>&nbsp;&nbsp;修改文件夹权限如下：</p>
+<p><img src="https://s1.ax1x.com/2018/09/26/iMcEx1.png" srcset="/img/loading.gif" alt="文件夹权限"></p>
+<p>&nbsp;&nbsp;文件夹内三个文件的权限均设置成如下图所示：</p>
+<p><img src="https://s1.ax1x.com/2018/09/26/iMcZKx.png" srcset="/img/loading.gif" alt="文件权限"></p>
+<h3 id="画图-draw-io"><a href="#画图-draw-io" class="headerlink" title="画图 draw.io"></a>画图 <a target="_blank" rel="noopener" href="https://www.draw.io/">draw.io</a></h3><p>&nbsp;&nbsp;这严格来说并不是一款软件，而是一款Chrome的插件,能够添加到桌面。非常好用、易用，可以满足大部分画图功能。进网页后选择<code>帮助</code>-&gt;<code>Download draw.io Desktop...</code>下载后使用以下命令安装即可：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> dpkg -i draw.io-amd<span class="hljs-number">64</span>-<span class="hljs-number">8</span>.<span class="hljs-number">8</span>.<span class="hljs-number">0</span>.deb</code></pre>
+
+<h3 id="图片处理-GIMP"><a href="#图片处理-GIMP" class="headerlink" title="图片处理 GIMP"></a>图片处理 GIMP</h3><p>&nbsp;&nbsp;在 Ubuntu Software 中搜索即可安装。</p>
+<h3 id="视频播放器-SMPlayer"><a href="#视频播放器-SMPlayer" class="headerlink" title="视频播放器 SMPlayer"></a>视频播放器 SMPlayer</h3><p>&nbsp;&nbsp;执行以下命令安装：</p>
+<pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> install smplayer</code></pre>
+
+<h3 id="拼音-谷歌拼音"><a href="#拼音-谷歌拼音" class="headerlink" title="拼音 谷歌拼音"></a>拼音 谷歌拼音</h3><p>&nbsp;&nbsp;打字确实是搜狗拼音舒服一点，但是搜狗拼音时不时的会出现候选词乱码问题。网络上的解决方案都治标不治本，因此还是主要用谷歌拼音了。<br>&nbsp;&nbsp;执行以下命令安装谷歌拼音：</p>
+<pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> install fcitx-googlepinyin</code></pre>
+<p>&nbsp;&nbsp;<code>system setting</code>-&gt; <code>Language Support</code> 中 <code>Keyboard input method system</code> 选择 <strong>fcitx</strong>。<strong>重启</strong>后在 Fcitx Config Tool 中启动谷歌拼音即可。</p>
+<h3 id="截图工具-Shutter"><a href="#截图工具-Shutter" class="headerlink" title="截图工具 Shutter"></a>截图工具 Shutter</h3><p>&nbsp;&nbsp;执行以下命令安装：</p>
+<pre><code class="hljs smali">sudo<span class="hljs-built_in"> add-apt-repository </span>ppa:shutter/ppa
+sudo apt-get update
+sudo apt-get install shutter</code></pre>
+<p>&nbsp;&nbsp;在 <code>Settings</code> -&gt; <code>Devices</code> -&gt; <code>Keyboard</code> 中的 Custom Shortcuts 中添加：<br><img src="https://s1.ax1x.com/2018/09/01/PxVBq0.png" srcset="/img/loading.gif"><br>&nbsp;&nbsp;选中后按 <strong>Enter</strong> 确认即可。</p>
+<h3 id="办公套件-WPS"><a href="#办公套件-WPS" class="headerlink" title="办公套件 WPS"></a>办公套件 WPS</h3><p>&nbsp;&nbsp;首先从 <a target="_blank" rel="noopener" href="http://community.wps.cn/download/">http://community.wps.cn/download/</a> 官网下载最新版文件。执行命令安装：</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">sudo</span> <span class="hljs-selector-tag">dpkg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">wps-office_10</span><span class="hljs-selector-class">.1</span><span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.6634_amd64</span><span class="hljs-selector-class">.deb</span></code></pre>
+<p>&nbsp;&nbsp;修复缺失字体问题</p>
+<ol>
+<li>下载文件并解压<br><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1mh0lcbY">百度云</a></li>
+<li>继续执行命令<br>&nbsp;&nbsp;将得到文件解压进一个文件夹内，进入这个文件夹，将里面的字体文件都复制到 /usr/share/fonts 下：<pre><code class="hljs arcade">sudo cp * <span class="hljs-regexp">/usr/</span>share/fonts</code></pre>
+&nbsp;&nbsp;生成字体的索引信息<pre><code class="hljs properties"><span class="hljs-attr">sudo</span> <span class="hljs-string">mkfontscale</span>
+<span class="hljs-attr">sudo</span> <span class="hljs-string">mkfontdir</span></code></pre>
+&nbsp;&nbsp;更新字体缓存<pre><code class="hljs ebnf"><span class="hljs-attribute">sudo fc-cache</span></code></pre>
+
+</li>
+</ol>
+<h3 id="解压-unrar"><a href="#解压-unrar" class="headerlink" title="解压 unrar"></a>解压 unrar</h3><p>&nbsp;&nbsp;首先执行以下命令安装：</p>
+<pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> install unrar</code></pre>
+
+<p>&nbsp;&nbsp;这个网上教程很多，但很遗憾，一开始那位写错了，后面的都抄错了。最常用命令是：</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">unrar</span> <span class="hljs-selector-tag">x</span> <span class="hljs-selector-tag">xxx</span><span class="hljs-selector-class">.rar</span></code></pre>
+<p>&nbsp;&nbsp;这样可以保持压缩包文件目录结构解压出来。</p>
+<h3 id="PDF-阅读器-okular"><a href="#PDF-阅读器-okular" class="headerlink" title="PDF 阅读器 okular"></a>PDF 阅读器 okular</h3><p>&nbsp;&nbsp;执行以下命令安装：</p>
+<pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> install okular</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Software/">Software</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/09/01/Sublime-Text-3-%E6%8F%92%E4%BB%B6%E5%8F%8A%E6%B3%A8%E5%86%8C%E7%A0%81/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Sublime Text 3 插件及注册码</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/01/Ubuntu-18.04-LTS-GitHub-Pages-Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+                        <span class="hidden-mobile">Ubuntu 18.04 LTS GitHub Pages + Hexo 搭建博客</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Ubuntu 18.04 LTS 常用软件&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

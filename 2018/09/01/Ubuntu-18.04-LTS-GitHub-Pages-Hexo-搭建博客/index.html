@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Ubuntu 18.04 LTS GitHub Pages + Hexo 搭建博客 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2018-09-01 18:04" pubdate>
+      September 1, 2018 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      25
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Ubuntu 18.04 LTS GitHub Pages + Hexo 搭建博客</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&nbsp;&nbsp;这是一篇在 Ubuntu 18.04 LTS 中使用 GitHub Pages 和 Hexo 搭建免费独立博客的总结。我有自己的服务器，出于某种需要，我用我的服务器反代了 GitHub Pages, 将会使用自己的域名访问 GitHub Pages 上的博客。同时，为了在多台电脑上都可以更新博客，采用两个分支的方式来存放文件，master 分支存放 Hexo 渲染出来的文件， 新建的分支存放源文件。</p>
+<h1 id="必要配置"><a href="#必要配置" class="headerlink" title="必要配置"></a>必要配置</h1><h2 id="GitHub-Pages-仓库"><a href="#GitHub-Pages-仓库" class="headerlink" title="GitHub Pages 仓库"></a>GitHub Pages 仓库</h2><h3 id="创建对应仓库"><a href="#创建对应仓库" class="headerlink" title="创建对应仓库"></a>创建对应仓库</h3><p>&nbsp;&nbsp;在自己的 GitHub 账号下创建一个新的仓库，命名为 username.github.io（username是你的账号名)。</p>
+<p>&nbsp;&nbsp;在这里，要知道，GitHub Pages 有两种类型：User/Organization Pages 和 Project Pages，而我所使用的是 User Pages。</p>
+<p>&nbsp;&nbsp;简单来说，User Pages 与 Project Pages 的区别是：</p>
+<ol>
+<li>User Pages 是用来展示用户的，而 Project Pages 是用来展示项目的。</li>
+<li>用于存放 User Pages 的仓库必须使用 username.github.io 的命名规则，而 Project Pages 则没有特殊的要求。</li>
+<li>User Pages 将使用仓库的 master 分支，而 Project Pages 将使用 gh-pages 分支。</li>
+<li>User Pages 通过 <code>http(s)://username.github.io</code> 进行访问，而 Projects Pages 通过 <code>http(s)://username.github.io/projectname</code> 进行访问。</li>
+</ol>
+<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://help.github.com/articles/user-organization-and-project-pages/">GitHub Pages Basics / User, Organization, and Project Pages</a></li>
+</ul>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><pre><code class="hljs bash">sudo apt-get install git</code></pre>
+
+<h3 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h3><p>&nbsp;&nbsp;当安装完 Git 应该做的第一件事情就是设置用户名称和邮件地址。这样做很重要，因为每一个 Git 的提交都会使用这些信息，并且它会写入你的每一次提交中，不可更改：</p>
+<pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;username&quot;</span>
+git config --global user.email <span class="hljs-string">&quot;username@example.com&quot;</span></code></pre>
+
+<p>&nbsp;&nbsp;对于 user.email，因为在 GitHub 的 commits 信息上是可见的，所以如果你不想让人知道你的 email，可以 Keeping your email address private:</p>
+<ol>
+<li>在GitHub右上方点击你的头像，选择<code>Settings</code>；</li>
+<li>在右边的<code>Personal settings</code>侧边栏选择<code>Emails</code>；</li>
+<li>选择<code>Keep my email address private</code>。</li>
+</ol>
+<p>&nbsp;&nbsp;这样，你就可以使用如下格式的 email 进行配置：</p>
+<pre><code class="hljs bash">$ git config --global user.email <span class="hljs-string">&quot;username@users.noreply.github.com&quot;</span></code></pre>
+
+<h3 id="相关资料-1"><a href="#相关资料-1" class="headerlink" title="相关资料"></a>相关资料</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git">安装 Git</a></li>
+<li><a target="_blank" rel="noopener" href="http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE">配置 Git</a></li>
+<li><a target="_blank" rel="noopener" href="https://help.github.com/articles/setting-your-email-in-git/">Setting your email in Git</a></li>
+<li><a target="_blank" rel="noopener" href="https://help.github.com/articles/keeping-your-email-address-private/">Keeping your email address private
+</a></li>
+</ul>
+<h2 id="Git-与-GitHub"><a href="#Git-与-GitHub" class="headerlink" title="Git 与 GitHub"></a>Git 与 GitHub</h2><h3 id="与github建立联系"><a href="#与github建立联系" class="headerlink" title="与github建立联系"></a>与github建立联系</h3><p>&nbsp;&nbsp;为了能够在本地使用 git 管理 github 上的项目，需要进行一些配置，这里介绍 SSH 的方法。</p>
+<h4 id="检查电脑是否已经有-SSH-keys。"><a href="#检查电脑是否已经有-SSH-keys。" class="headerlink" title="检查电脑是否已经有 SSH keys。"></a>检查电脑是否已经有 SSH keys。</h4><pre><code class="hljs bash">ls ~/.ssh
+<span class="hljs-comment"># Lists the files in your .ssh directory, if they exist</span></code></pre>
+
+<p>&nbsp;&nbsp;默认情况下，public keys 的文件名是以下的格式之一：id_dsa.pub、id_ecdsa.pub、id_ed25519.pub、id_rsa.pub。因此，如果列出的文件有 public 和 private 钥匙对（例如id_ras.pub和id_rsa），证明已存在 SSH keys。</p>
+<h4 id="如果没有-SSH-key，则生成新的-SSH-key。"><a href="#如果没有-SSH-key，则生成新的-SSH-key。" class="headerlink" title="如果没有 SSH key，则生成新的 SSH key。"></a>如果没有 SSH key，则生成新的 SSH key。</h4><pre><code class="hljs bash">ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;your_email@example.com&quot;</span>
+<span class="hljs-comment"># Creates a new ssh key, using the provided email as a label</span></code></pre>
+<p>&nbsp;&nbsp;之后一路回车即可。</p>
+<h4 id="向-ssh-agent-添加-key。"><a href="#向-ssh-agent-添加-key。" class="headerlink" title="向 ssh-agent 添加 key。"></a>向 ssh-agent 添加 key。</h4><p>&nbsp;&nbsp;首先确保 ssh-agent 可运行：</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># start the ssh-agent in the background</span>
+ssh-agent -s</code></pre>
+<p>&nbsp;&nbsp;然后添加 SSH key：</p>
+<pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa</code></pre>
+
+<h4 id="在-GitHub-添加-SSH-key。"><a href="#在-GitHub-添加-SSH-key。" class="headerlink" title="在 GitHub 添加 SSH key。"></a>在 GitHub 添加 SSH key。</h4><p>&nbsp;&nbsp;首先，拷贝 key：</p>
+<pre><code class="hljs bash">sudo cat ~/.ssh/id_rsa.pub
+<span class="hljs-comment"># Copies the contents of the id_rsa.pub file to your cllipboard</span></code></pre>
+<p>&nbsp;&nbsp;然后，在 GitHub 右上方点击头像，选择<code>Settings</code>，在右边的<code>Personal settings</code>侧边栏选择<code>SSH Keys</code>。接着粘贴 key，点击<code>Add key</code>按钮。最后，测试链接：</p>
+<pre><code class="hljs bash">ssh -T git@github.com
+<span class="hljs-comment"># Attempts to ssh to GitHub</span></code></pre>
+<p>&nbsp;&nbsp;如果你看到：</p>
+<pre><code class="hljs bash">The authenticity of host <span class="hljs-string">&#x27;github.com (207.97.227.239)&#x27;</span> can<span class="hljs-string">&#x27;t be established.</span>
+<span class="hljs-string">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span>
+<span class="hljs-string">Are you sure you want to continue connecting (yes/no)?</span></code></pre>
+<p>&nbsp;&nbsp;就键入：yes。之后将会看到如下信息：</p>
+<pre><code class="hljs bash">Hi username! You<span class="hljs-string">&#x27;ve successfully authenticated, but GitHub does not</span>
+<span class="hljs-string">provide shell access.</span></code></pre>
+
+<h3 id="相关资料-2"><a href="#相关资料-2" class="headerlink" title="相关资料"></a>相关资料</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://help.github.com/articles/generating-ssh-keys/">Generating SSH keys</a></li>
+</ul>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>&nbsp;&nbsp;具体安装方法及主题配置请查看：<a href="/2018/09/01/Ubuntu-18-04-LTS-%E9%85%8D%E7%BD%AE-Hexo/" title="Ubuntu 18.04 LTS 配置 Hexo">Ubuntu 18.04 LTS 配置 Hexo</a></p>
+<h2 id="搭建方法"><a href="#搭建方法" class="headerlink" title="搭建方法"></a>搭建方法</h2><p>&nbsp;&nbsp;在上面，我们已经配置好了所需的前置条件，也了解了 Hexo 博客搭建方法。现在，需要使用 GitHub Pages 搭建一个别人能够访问的 Hexo 博客了。</p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>&nbsp;&nbsp;创建一个名为<code>username.github.io</code>的仓库。</p>
+<h3 id="搭建-hexo-博客-并创建两个分支：master-与-source"><a href="#搭建-hexo-博客-并创建两个分支：master-与-source" class="headerlink" title="搭建 hexo 博客 并创建两个分支：master 与 source"></a>搭建 hexo 博客 并创建两个分支：master 与 source</h3><h4 id="首先建立-hexo-博客"><a href="#首先建立-hexo-博客" class="headerlink" title="首先建立 hexo 博客"></a>首先建立 hexo 博客</h4><pre><code class="hljs bash">mkdir ~/Documents/Hexo
+<span class="hljs-built_in">cd</span> ~/Documents/Hexo
+sudo npm install -g hexo-cli
+hexo init
+sudo npm install
+sudo npm install hexo-deployer-git</code></pre>
+
+<h4 id="创建-source-分支，并使其为默认分支："><a href="#创建-source-分支，并使其为默认分支：" class="headerlink" title="创建 source 分支，并使其为默认分支："></a>创建 source 分支，并使其为默认分支：</h4><pre><code class="hljs bash">git init
+git remote add origin git@github.com:username/username.github.io.git
+git add .
+<span class="hljs-comment">#添加修改</span>
+git commit -m <span class="hljs-string">&quot;init hexo&quot;</span>
+<span class="hljs-comment">#初次提交</span>
+git checkout -b <span class="hljs-built_in">source</span>
+<span class="hljs-comment">#建立分支 hexo 并切换到分支 hexo</span>
+git push -u origin <span class="hljs-built_in">source</span>
+<span class="hljs-comment">#将分支 hexo 提交到 github</span></code></pre>
+
+<h4 id="创建-空白分支-master"><a href="#创建-空白分支-master" class="headerlink" title="创建 空白分支 master"></a>创建 空白分支 master</h4><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ..
+<span class="hljs-comment">#退回上一级目录</span>
+mkdir new
+<span class="hljs-comment">#创建一个新的文件夹用以创建空白分支</span>
+<span class="hljs-built_in">cd</span> ~/Documents/new
+git init
+touch README.md
+<span class="hljs-comment">#随意创建一个文件，用于提交分支</span>
+git add .
+git commit -m <span class="hljs-string">&quot;new branch&quot;</span>
+git remote add origin git@github.com:username/username.github.io.git
+git push origin master
+<span class="hljs-comment">#将分支 master 提交到 github</span>
+rm README.md
+git add .
+git commit -m <span class="hljs-string">&quot;clear new branch&quot;</span>
+git push origin master
+<span class="hljs-built_in">cd</span> ~/Documents/
+rm -rf new
+<span class="hljs-built_in">cd</span> Hexo
+git pull</code></pre>
+<p>&nbsp;&nbsp;执行完成之后，该仓库的默认分支被设为 source，同时还有空白的 master 分支用于存放网页。</p>
+<h4 id="设置域名"><a href="#设置域名" class="headerlink" title="设置域名"></a>设置域名</h4><p>&nbsp;&nbsp;在 username.github.io 仓库首页选择<code>Settings</code>，向下拉，在<code>GitHub Pages</code>部分的<code>Custom domain</code>中填上自己的域名，点击<code>save</code>保存。此操作会在 master 分支下生成一个 CNAME 文件，里面就是刚填写的域名。</p>
+<h4 id="配置-hexo-提交方式"><a href="#配置-hexo-提交方式" class="headerlink" title="配置 hexo 提交方式"></a>配置 hexo 提交方式</h4><p>&nbsp;&nbsp;编辑该文件夹下的<code>_config.yml</code>的<code>deploy</code>参数，分支应为 master。</p>
+<p>默认生成的_config.yml：</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># Deployment</span>
+<span class="hljs-comment">## Docs: http://hexo.io/docs/deployment.html</span>
+deploy:
+  <span class="hljs-built_in">type</span>:</code></pre>
+
+<p>修改后的_config.yml：</p>
+<pre><code class="hljs bash">deploy:
+  <span class="hljs-built_in">type</span>: git
+  repo: 对应仓库的SSH地址（可以在 GitHub 对应的仓库中复制）
+  branch: 分支（User Pages 为 master，Project Pages 为 gh-pages）</code></pre>
+
+<h4 id="修改博客及部署操作"><a href="#修改博客及部署操作" class="headerlink" title="修改博客及部署操作"></a>修改博客及部署操作</h4><p>&nbsp;&nbsp;修改博客内容后依次执行以下命令来提交网站相关的文件：</p>
+<pre><code class="hljs bash">git add .
+git commit -m <span class="hljs-string">&quot;自定义内容即可&quot;</span>
+git push origin <span class="hljs-built_in">source</span></code></pre>
+<p>&nbsp;&nbsp;然后执行以下任意一条生成网站并部署到 GitHub 上。</p>
+<pre><code class="hljs verilog">hexo <span class="hljs-keyword">generate</span> -d</code></pre>
+<pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g -d</span></code></pre>
+
+<p>&nbsp;&nbsp;这样一来，在 GitHub 上的 username.github.io 仓库就有两个分支，一个 source 分支用来存放网站的原始文件，一个 master 分支用来存放生成的静态网页。</p>
+<h4 id="域名重置问题及解决方案"><a href="#域名重置问题及解决方案" class="headerlink" title="域名重置问题及解决方案"></a>域名重置问题及解决方案</h4><h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><p>&nbsp;&nbsp;每次执行完<code>hexo g -d</code>之后，github 仓库设置中的 <code>Custom domain</code>总是被重置，导致域名访问出现 404 错误。</p>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><p>&nbsp;&nbsp;在 Hexo 生成的博客的 source 目录下新建一个 CNAME 文件，里面填上自己的域名即可。</p>
+<h2 id="博客管理"><a href="#博客管理" class="headerlink" title="博客管理"></a>博客管理</h2><h3 id="博客管理流程"><a href="#博客管理流程" class="headerlink" title="博客管理流程"></a>博客管理流程</h3><h4 id="日常修改"><a href="#日常修改" class="headerlink" title="日常修改"></a>日常修改</h4><p>&nbsp;&nbsp;在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
+<ol>
+<li>依次执行<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin source</code>指令将改动推送到 GitHub（此时当前分支应为 source）；</li>
+<li>然后才执行 <code>hexo g -d</code> 或 <code>hexo generate -d</code> 发布网站到 master 分支上。</li>
+</ol>
+<h4 id="本地资料丢失"><a href="#本地资料丢失" class="headerlink" title="本地资料丢失"></a>本地资料丢失</h4><p>&nbsp;&nbsp;当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<ol>
+<li>使用 <code>git clone git@github.com:username/username.github.io.git</code> 拷贝仓库（默认分支为 source）；</li>
+<li>在本地新拷贝的<code>username.github.io</code>文件夹下通过终端依次执行下列指令：<code>sudo npm install -g hexo-cli</code>、<code>sudo npm install</code>、<code>sudo npm install hexo-deployer-git</code></li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Programming/">Programming</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9D%99%E6%80%81%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">静态独立博客</a>
+                    
+                      <a class="hover-with-bg" href="/tags/GitHub-Page/">GitHub Page</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Git/">Git</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/09/01/Ubuntu-18-04-LTS-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Ubuntu 18.04 LTS 常用软件</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/01/%E5%9C%A8%E6%B7%BB%E5%8A%A0%E4%BB%93%E5%BA%93-add-apt-repository-%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0-apt-update%E5%91%BD%E4%BB%A4%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF/">
+                        <span class="hidden-mobile">在添加仓库 add-apt-repository 或者更新 apt update命令显示错误</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Ubuntu 18.04 LTS GitHub Pages + Hexo 搭建博客&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

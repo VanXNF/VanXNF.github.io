@@ -1,0 +1,892 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/30/Windows-10-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%B0%8F%E8%AE%B0/">Windows 10 环境变量小记</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/30/Windows-10-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%B0%8F%E8%AE%B0/">
+          
+          
+            
+          
+          
+新买了一个固态硬盘，打算重装一下系统，在此记录一下环境变量的配置情况，以便恢复环境作为参考。
+
+系统变量JAVA
+变量名： JAVA_HOME
+变量值： C:\Program Files\Java\jdk1.8.0_172
+
+&nbsp;&nbsp;然后在 path 中添加以下内容：
+
+%JAVA_HOME%\bin
+
+&nbsp;&nbsp;再新建一个系统变量：
+
+变量名：CLASSPATH
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-30 07:44" pubdate>
+              2018-09-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Settings/">Settings</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Windows-10/">Windows 10</a>
+            
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">环境变量</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/26/Windows-10-%E9%85%8D%E7%BD%AE-Maven-%E7%8E%AF%E5%A2%83/">Windows 10 配置 Maven 环境</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/26/Windows-10-%E9%85%8D%E7%BD%AE-Maven-%E7%8E%AF%E5%A2%83/">
+          
+          
+            
+          
+          下载 Maven&nbsp;&nbsp;首先从 http://maven.apache.org/download.cgi 下载 Maven 压缩包， apache-maven-3.5.4-bin.zip 或者 apache-maven-3.5.4-bin.tar.gz 均可。下载完成后解压即可，我解压后文件夹路径为 D:\Maven\apache-maven-3.5.4。Maven 文件夹是我自行
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-26 10:10" pubdate>
+              2018-09-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Windows-10/">Windows 10</a>
+            
+              <a href="/tags/Maven/">Maven</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/26/Atom-%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E4%BB%A5%E5%8F%8A-Markdown-%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/">Atom 配置代理以及自用插件整理</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/26/Atom-%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E4%BB%A5%E5%8F%8A-Markdown-%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/">
+          
+          
+            
+          
+          Atom 配置代理&nbsp;&nbsp;代理需要自己准备好，方法很简单，使用以下命令即可：
+apm config set strict-ssl false
+apm config set http-proxy http://127.0.0.1:8080
+apm config set https-proxy http://127.0.0.1:8080
+
+Atom 插件整理markdown-previ
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-26 09:40" pubdate>
+              2018-09-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Atom/">Atom</a>
+            
+              <a href="/tags/Markdown/">Markdown</a>
+            
+              <a href="/tags/Proxy/">Proxy</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/26/Windows-10-%E9%85%8D%E7%BD%AE-Git/">Windows 10 配置 Git</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/26/Windows-10-%E9%85%8D%E7%BD%AE-Git/">
+          
+          
+            
+          
+          下载安装 Git&nbsp;&nbsp;首先从 Git 官网 下载安装包，基本保持默认选项，安装即可。
+&nbsp;&nbsp;安装完成后，Git bash 或者 cmd 中可以输入 git --version，验证是否安装成功，输出版本号即为安装成功。
+配置用户&nbsp;&nbsp;安装完成有配置一下全局的用户名和邮箱，输入如下命令：
+git config --global user.name
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-26 09:11" pubdate>
+              2018-09-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Git/">Git</a>
+            
+              <a href="/tags/Windows-10/">Windows 10</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/16/%E7%AE%97%E6%B3%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%E5%8F%8A%E8%A7%A3%E6%9E%90/">算法第一次作业及解析</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/16/%E7%AE%97%E6%B3%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%E5%8F%8A%E8%A7%A3%E6%9E%90/">
+          
+          
+            
+          
+          算法分析题求下列函数的渐近表达式(1-1)
+$3n^2+10n$
+$\frac{n^2}{10} + 2^n$
+$21+ \frac{1}{n}$
+$\log n^3$
+$10 \log 3^n$
+
+&nbsp;&nbsp;解析:
+
+$3n^2+10n = O(n^2)$
+$\frac{n^2}{10} + 2^n = O(2^n)$
+$21+ \frac{1}{n} = O(1)$
+$\log 
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-16 14:05" pubdate>
+              2018-09-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Homework/">Homework</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%BD%9C%E4%B8%9A/">作业</a>
+            
+              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/15/Ubuntu-18-04-LTS-%E5%AE%89%E8%A3%85-Tex-Live/">Ubuntu 18.04 LTS 安装 Tex Live</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/15/Ubuntu-18-04-LTS-%E5%AE%89%E8%A3%85-Tex-Live/">
+          
+          
+            
+          
+          下载安装包&nbsp;&nbsp;如果身在国内，推荐改用国内的镜像，比如清华大学的 tuna。以下都以这个镜像为例。
+&nbsp;&nbsp;在  https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/ 下载 install-tl-unx.tar.gz，解压并进入文件夹 install-tl-20180915。日期请按照你解
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-15 22:35" pubdate>
+              2018-09-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/Tex-Live/">Tex Live</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A%E5%8F%8A%E8%A7%A3%E6%9E%90/">操作系统第一次课后作业及解析</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A%E5%8F%8A%E8%A7%A3%E6%9E%90/">
+          
+          
+            
+          
+          设计现代OS的主要目标是什么？
+有效性
+方便性
+可扩充性
+开放性
+
+OS的作用可表现在哪几个方面？
+OS作为用户与计算机硬件系统之间的接口
+OS作为计算机系统资源的管理者
+OS实现了对计算机资源的抽象
+
+实现分时系统的关键问题是什么？应如何解决？&nbsp;&nbsp;关键问题是当用户在自己的终端上键入命令时，系统应能及时接收并及时处理该命令，在用户能接受的时延内将结果返回给用户。
+&nbsp;&
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-15 10:45" pubdate>
+              2018-09-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Homework/">Homework</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+            
+              <a href="/tags/%E4%BD%9C%E4%B8%9A/">作业</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/11/Hexo-%E4%BD%BF%E7%94%A8-MathJax-%E6%B8%B2%E6%9F%93%E5%85%AC%E5%BC%8F%E5%B9%B6%E8%A7%A3%E5%86%B3%E6%B8%B2%E6%9F%93%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/">Hexo 使用 MathJax 渲染公式并解决渲染冲突问题</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/11/Hexo-%E4%BD%BF%E7%94%A8-MathJax-%E6%B8%B2%E6%9F%93%E5%85%AC%E5%BC%8F%E5%B9%B6%E8%A7%A3%E5%86%B3%E6%B8%B2%E6%9F%93%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/">
+          
+          
+            
+          
+          &nbsp;&nbsp;Hexo 是默认支持 mathjax 公式渲染的，但依然需要解决渲染冲突。
+更改渲染引擎&nbsp;&nbsp;卸载默认渲染引擎并安装另一个：
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-kramed --save
+&nbsp;&nbsp;这里的安装可能出问题，可以先更新一下 npm
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-11 17:53" pubdate>
+              2018-09-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+              <a href="/tags/MathJax/">MathJax</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/11/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">算法设计与分析</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/11/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">
+          
+          
+            
+          
+          第一章 概述算法学习的重要性&nbsp;&nbsp;主要内容：
+
+递归/分治
+动态规划
+贪心算法
+回溯算法
+分枝限界
+高级数据结构
+复杂度理论
+随机算法
+近似算法
+并行算法
+
+算法的特性
+有输入：有外部提供的量作为算法的输入。
+有输出：算法产生至少一个量作为输出。
+确定性：组成算法的每条指令都是清晰的，无歧义的。
+有限性：算法中每条指令的执行次数是有限的，执行每条指令的时间也是有限的。
+
+复杂性分
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-11 17:28" pubdate>
+              2018-09-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            
+              <a href="/tags/algorithm/">algorithm</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/03/%E5%9C%A8-Atom-%E4%B8%AD%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%B4%E6%88%B3/">在 Atom 中快速输入时间戳</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/03/%E5%9C%A8-Atom-%E4%B8%AD%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%B4%E6%88%B3/">
+          
+          
+            
+          
+          问题&nbsp;&nbsp;如何在 Atom 中可以快速插入时间戳？
+解决方案修改 Atom 启动脚本&nbsp;&nbsp;在 atom 中选择 edit -&gt; Preferences会弹出 Settings 标签页，选择底部的 Open Config Folder，此时在弹出窗口找到 ~/.atom/init.coffee ，在文件中添加如下代码：
+daysOfWeek = [&#x27
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-03 18:30" pubdate>
+              2018-09-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Atom/">Atom</a>
+            
+              <a href="/tags/timestamps/">timestamps</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "An elegant Material-Design theme for Hexo&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

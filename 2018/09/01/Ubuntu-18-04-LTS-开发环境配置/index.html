@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Ubuntu 18.04 LTS 开发环境配置 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2018-09-01 20:23" pubdate>
+      September 1, 2018 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      30
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Ubuntu 18.04 LTS 开发环境配置</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h1><h2 id="方法一-手动下载安装"><a href="#方法一-手动下载安装" class="headerlink" title="方法一 手动下载安装"></a>方法一 手动下载安装</h2><h3 id="下载并安装"><a href="#下载并安装" class="headerlink" title="下载并安装"></a>下载并安装</h3><p>&nbsp;&nbsp;首先下载 <a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html">JDK8</a> ，解压到  /usr/lib/jvm ，我下载的是 <strong>jdk-8u181-linux-x64.tar.gz</strong>，执行</p>
+<pre><code class="hljs crystal">sudo mkdir /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">jvm</span></span>
+sudo tar -zxvf jdk-<span class="hljs-number">8</span>u181-linux-x64.tar.gz -C /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">jvm</span></span></code></pre>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>&nbsp;&nbsp;由于我使用 zsh 因此编辑的是 <strong>~/.zshrc</strong> 文件，使用默认终端的则编辑 <strong>~/.bashrc</strong> 文件，或者<strong>配置所有用户的环境变量</strong>编辑 <strong>/etc/profile</strong> 。</p>
+<p>&nbsp;&nbsp;执行：</p>
+<pre><code class="hljs jboss-cli">sudo vi ~<span class="hljs-string">/.zshrc</span></code></pre>
+<p>&nbsp;&nbsp;在文件末尾添加：</p>
+<pre><code class="hljs routeros"><span class="hljs-comment">#set oracle jdk environment</span>
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">JAVA_HOME</span>=/usr/lib/jvm/jdk1.8.0_181
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">JRE_HOME</span>=<span class="hljs-variable">$&#123;JAVA_HOME&#125;</span>/jre
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">CLASSPATH</span>=.:$&#123;JAVA_HOME&#125;/lib:<span class="hljs-variable">$&#123;JRE_HOME&#125;</span>/lib
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-variable">$&#123;JAVA_HOME&#125;</span>/bin:$PATH</code></pre>
+<p>&nbsp;&nbsp;然后执行：</p>
+<pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.zshrc</code></pre>
+<h3 id="系统设置默认-JDK"><a href="#系统设置默认-JDK" class="headerlink" title="系统设置默认 JDK "></a>系统设置默认 JDK </h3><p>&nbsp;&nbsp;执行：</p>
+<pre><code class="hljs crystal">sudo update-alternatives --install /usr/bin/java java /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">jvm</span>/<span class="hljs-title">jdk1</span>.8.0<span class="hljs-title">_181</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">java</span> 300</span>
+sudo update-alternatives --install /usr/bin/javac javac /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">jvm</span>/<span class="hljs-title">jdk1</span>.8.0<span class="hljs-title">_181</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">javac</span> 300</span>
+sudo update-alternatives --install /usr/bin/jar jar /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">jvm</span>/<span class="hljs-title">jdk1</span>.8.0<span class="hljs-title">_181</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">jar</span> 300</span>
+sudo update-alternatives --install /usr/bin/javah javah /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">jvm</span>/<span class="hljs-title">jdk1</span>.8.0<span class="hljs-title">_181</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">javah</span> 300</span>
+sudo update-alternatives --install /usr/bin/javap javap /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">jvm</span>/<span class="hljs-title">jdk1</span>.8.0<span class="hljs-title">_181</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">javap</span> 300</span></code></pre>
+<p>&nbsp;&nbsp;然后执行:</p>
+<pre><code class="hljs pgsql">sudo <span class="hljs-keyword">update</span>-alternatives <span class="hljs-comment">--config java</span></code></pre>
+<p>&nbsp;&nbsp;若是初次安装 JDK，会有下面的提示:    </p>
+<pre><code class="hljs routeros">There is only one alternative <span class="hljs-keyword">in</span> link<span class="hljs-built_in"> group </span>java (providing /usr/bin/java): /usr/lib/jvm/jdk1.8.0_181/bin/java
+<span class="hljs-literal">Nothing</span> <span class="hljs-keyword">to</span> configure.</code></pre>
+<p>&nbsp;&nbsp;否则，选择合适的 JDK即可。</p>
+<p>### 查看java版本</p>
+<p>&nbsp;&nbsp;查看版本检验是否安装成功：</p>
+<pre><code class="hljs applescript">java -<span class="hljs-built_in">version</span></code></pre>
+<h2 id="方法二-命令行方式安装-oracle-JDK"><a href="#方法二-命令行方式安装-oracle-JDK" class="headerlink" title="方法二 命令行方式安装 oracle JDK"></a>方法二 命令行方式安装 oracle JDK</h2><h3 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h3><pre><code class="hljs maxima">sudo apt-<span class="hljs-built_in">get</span> install python-software-<span class="hljs-built_in">properties</span></code></pre>
+<h3 id="添加仓库源"><a href="#添加仓库源" class="headerlink" title="添加仓库源"></a>添加仓库源</h3><pre><code class="hljs smali">sudo<span class="hljs-built_in"> add-apt-repository </span>ppa:webupd8team/java</code></pre>
+<h3 id="更新软件包列表"><a href="#更新软件包列表" class="headerlink" title="更新软件包列表"></a>更新软件包列表</h3><pre><code class="hljs pgsql">sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">update</span></code></pre>
+<h3 id="安装java-JDK"><a href="#安装java-JDK" class="headerlink" title="安装java JDK"></a>安装java JDK</h3><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> install oracle-java8-installer</code></pre>
+<p>&nbsp;&nbsp;<strong>注意安装过程中需要接受协议</strong></p>
+<p>###5. 查看java版本</p>
+<pre><code class="hljs applescript">java -<span class="hljs-built_in">version</span></code></pre>
+<h1 id="应用软件安装"><a href="#应用软件安装" class="headerlink" title="应用软件安装"></a>应用软件安装</h1><h2 id="Sublime-Text-3"><a href="#Sublime-Text-3" class="headerlink" title="Sublime Text 3 "></a>Sublime Text 3 </h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>&nbsp;&nbsp;参考 Sublime Text 3 的<a target="_blank" rel="noopener" href="https://www.sublimetext.com/docs/3/linux_repositories.html">官方安装文档</a>，按照提示即可正常安装，此处摘录 apt 安装步骤：</p>
+<p>&nbsp;&nbsp;Install the GPG key:</p>
+<pre><code class="hljs vim">wget -qO - http<span class="hljs-variable">s:</span>//download.sublimetext.<span class="hljs-keyword">com</span>/sublimehq-pub.gpg | sudo apt-key <span class="hljs-built_in">add</span> -</code></pre>
+<p>&nbsp;&nbsp;Ensure apt is set up to work with https sources:</p>
+<pre><code class="hljs elm"><span class="hljs-title">sudo</span> apt-get install apt-trans<span class="hljs-keyword">port</span>-https</code></pre>
+<p>&nbsp;&nbsp;以下按需要二选一即可</p>
+<p>&nbsp;&nbsp;Select the channel to use:</p>
+<p><strong>Stable</strong></p>
+<pre><code class="hljs awk">echo <span class="hljs-string">&quot;deb https://download.sublimetext.com/ apt/stable/&quot;</span> | sudo tee <span class="hljs-regexp">/etc/</span>apt<span class="hljs-regexp">/sources.list.d/</span>sublime-text.list</code></pre>
+<p><strong>Dev</strong></p>
+<pre><code class="hljs awk">echo <span class="hljs-string">&quot;deb https://download.sublimetext.com/ apt/dev/&quot;</span> | sudo tee <span class="hljs-regexp">/etc/</span>apt<span class="hljs-regexp">/sources.list.d/</span>sublime-text.list</code></pre>
+<p>&nbsp;&nbsp;Update apt sources and install Sublime Text</p>
+<pre><code class="hljs pgsql">sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">update</span>
+sudo apt-<span class="hljs-keyword">get</span> install sublime-<span class="hljs-type">text</span></code></pre>
+<p>&nbsp;&nbsp;注册码及插件请查看 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/08d07b012d38">Sublime Text 3 插件及注册码</a>。<br>&nbsp;&nbsp;无法输入中文问题请查看 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/592a294962c8">Sublime Text 3 Ubuntu 18.04 无法输入中文解决方案</a>。</p>
+<h2 id="现在可以使用-JetBrain-ToolBox-安装全家桶，安装与更新更为便利"><a href="#现在可以使用-JetBrain-ToolBox-安装全家桶，安装与更新更为便利" class="headerlink" title="现在可以使用 JetBrain ToolBox 安装全家桶，安装与更新更为便利"></a>现在可以使用 JetBrain ToolBox 安装全家桶，安装与更新更为便利</h2><h2 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>&nbsp;&nbsp;首先从 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/">https://developer.android.com/studio/</a> 下载软件压缩包。<br>&nbsp;&nbsp;右键解压或者使用以下命令：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> unzip android-studio-ide-<span class="hljs-number">173</span>.<span class="hljs-number">4907809</span>-linux.zip</code></pre>
+<p>&nbsp;&nbsp;解压后文件夹名为 android-studio，将文件夹移动至 /opt/下</p>
+<pre><code class="hljs awk">sudo mv android-studio <span class="hljs-regexp">/opt/</span></code></pre>
+<p>&nbsp;&nbsp;进入文件夹下</p>
+<pre><code class="hljs awk">cd <span class="hljs-regexp">/opt/</span>android-studio<span class="hljs-regexp">/bin/</span></code></pre>
+<p>&nbsp;&nbsp;执行以下命令即可打开 Android Studio，但是不建议这么做，因为这样打开配置文件等均存于root目录下，<strong>建议先创建快捷方式</strong>。</p>
+<pre><code class="hljs jboss-cli">sudo <span class="hljs-string">./studio.sh</span></code></pre>
+<p>&nbsp;&nbsp;初次启动，将设置选择好，会下载所需的文件，需要较长时间。</p>
+<h3 id="创建快捷方式"><a href="#创建快捷方式" class="headerlink" title="创建快捷方式"></a>创建快捷方式</h3><p>&nbsp;&nbsp;Ubuntu 在 /usr/share/applications 目录下存放着系统应用程序的快捷启动图标，我们可以在这里创建 Android Studio 的快捷方式。<br>&nbsp;&nbsp;首先进入文件夹</p>
+<pre><code class="hljs awk">cd <span class="hljs-regexp">/usr/</span>share/applications</code></pre>
+<p>&nbsp;&nbsp;创建快捷方式</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">sudo</span> <span class="hljs-selector-tag">vim</span> <span class="hljs-selector-tag">android-studio</span><span class="hljs-selector-class">.desktop</span></code></pre>
+<p>&nbsp;&nbsp;添加如下内容：</p>
+<pre><code class="hljs routeros">[Desktop Entry]
+<span class="hljs-attribute">Name</span>=Android Studio
+Name[zh_CN]=Android Studio
+<span class="hljs-attribute">Comment</span>=Android Studio
+<span class="hljs-attribute">Exec</span>=/opt/android-studio/bin/studio.sh
+<span class="hljs-attribute">Icon</span>=/opt/android-studio/bin/studio.png
+<span class="hljs-attribute">Terminal</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attribute">Type</span>=Application
+<span class="hljs-attribute">Categories</span>=Application;
+<span class="hljs-attribute">Encoding</span>=UTF-8
+<span class="hljs-attribute">StartupNotify</span>=<span class="hljs-literal">true</span></code></pre>
+<p>&nbsp;&nbsp;然后保存退出，执行：</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">sudo</span> <span class="hljs-selector-tag">chmod</span> +<span class="hljs-selector-tag">x</span> <span class="hljs-selector-tag">android-studio</span><span class="hljs-selector-class">.desktop</span></code></pre>
+<p>&nbsp;&nbsp;即可从菜单栏打开 Android Studio 了。</p>
+<h3 id="配置-adb-环境变量（可选）"><a href="#配置-adb-环境变量（可选）" class="headerlink" title="配置 adb 环境变量（可选）"></a>配置 adb 环境变量（可选）</h3><p>&nbsp;&nbsp;编辑 <strong>~/.zshrc</strong> 文件（系统自带终端编辑 ~/.bashrc ，对所有用户生效编辑 /etc/profile）</p>
+<pre><code class="hljs jboss-cli">sudo vim ~<span class="hljs-string">/.zshrc</span></code></pre>
+<p>&nbsp;&nbsp;在下方加入以下内容（ /home/vanxnf/Android/Sdk 部分写你的 sdk 路径）：</p>
+<pre><code class="hljs elixir"><span class="hljs-comment">#set path for android sdk tools</span>
+export PATH=<span class="hljs-variable">$PATH</span><span class="hljs-symbol">:/home/vanxnf/Android/Sdk/tools/</span>
+export PATH=<span class="hljs-variable">$PATH</span><span class="hljs-symbol">:/home/vanxnf/Android/Sdk/platform-tools/</span></code></pre>
+<p>&nbsp;&nbsp;然后执行以下命令即可生效。</p>
+<pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.zshrc</code></pre>
+
+<h2 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h2><h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><p>&nbsp;&nbsp;首先从 <a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/download/#section=linux">https://www.jetbrains.com/pycharm/download/#section=linux</a> 下载软件压缩包。也可直接使用以下命令安装：</p>
+<pre><code class="hljs sql">sudo snap <span class="hljs-keyword">install</span> [pycharm-professional|pycharm-community] <span class="hljs-comment">--classic</span></code></pre>
+<p>这里采用下载压缩包的形式，解压并将文件夹移动到 /opt/ 下</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">tar</span> -xf pycharm-professional-<span class="hljs-number">2018</span>.<span class="hljs-number">2</span>.<span class="hljs-number">2</span>.tar.gz
+<span class="hljs-attribute">sudo</span> mv pycharm-<span class="hljs-number">2018</span>.<span class="hljs-number">2</span>.<span class="hljs-number">2</span> /opt/</code></pre>
+<p>进入文件夹下</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">cd</span> /opt/pycharm-<span class="hljs-number">2018</span>.<span class="hljs-number">2</span>.<span class="hljs-number">2</span>/bin</code></pre>
+<p>执行以下命令即可打开 PyCharm， 但不建议这么做，建议先创建快捷方式。</p>
+<pre><code class="hljs jboss-cli">sudo <span class="hljs-string">./pycharm.sh</span></code></pre>
+<h3 id="创建快捷方式-1"><a href="#创建快捷方式-1" class="headerlink" title="创建快捷方式"></a>创建快捷方式</h3><p>&nbsp;&nbsp;Ubuntu 在 /usr/share/applications 目录下存放着系统应用程序的快捷启动图标，我们可以在这里创建 PyCharm 的快捷方式。<br>&nbsp;&nbsp;首先进入文件夹</p>
+<pre><code class="hljs awk">cd <span class="hljs-regexp">/usr/</span>share/applications</code></pre>
+<p>&nbsp;&nbsp;创建快捷方式</p>
+<pre><code class="hljs reasonml">sudo vim <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">PyCharm</span>.</span></span>desktop</code></pre>
+<p>&nbsp;&nbsp;添加如下内容：</p>
+<pre><code class="hljs routeros">[Desktop Entry]
+<span class="hljs-attribute">Name</span>=PyCharm
+Name[zh_CN]=PyCharm
+<span class="hljs-attribute">Comment</span>=PyCharm
+<span class="hljs-attribute">Exec</span>=/opt/pycharm-2018.2.2/bin/pycharm.sh
+<span class="hljs-attribute">Icon</span>=/opt/pycharm-2018.2.2/bin/pycharm.png
+<span class="hljs-attribute">Terminal</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attribute">Type</span>=Application
+<span class="hljs-attribute">Categories</span>=Application;
+<span class="hljs-attribute">Encoding</span>=UTF-8
+<span class="hljs-attribute">StartupNotify</span>=<span class="hljs-literal">true</span></code></pre>
+<p>&nbsp;&nbsp;然后保存退出，执行：</p>
+<pre><code class="hljs reasonml">sudo chmod +x <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">PyCharm</span>.</span></span>desktop</code></pre>
+<p>&nbsp;&nbsp;即可从菜单栏打开 PyCharm 了。</p>
+<h2 id="IntelliJ-IDEA"><a href="#IntelliJ-IDEA" class="headerlink" title="IntelliJ IDEA"></a>IntelliJ IDEA</h2><h3 id="安装-3"><a href="#安装-3" class="headerlink" title="安装"></a>安装</h3><p>&nbsp;&nbsp;首先从 <a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/download/#section=linux">https://www.jetbrains.com/idea/download/#section=linux</a> 下载软件压缩包。</p>
+<p>&nbsp;&nbsp;将压缩包解压并将文件夹移动到 /opt/ 下</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">tar</span> -xf ideaIU-<span class="hljs-number">2018</span>.<span class="hljs-number">2</span>.<span class="hljs-number">2</span>.tar.gz
+<span class="hljs-attribute">sudo</span> mv idea-IU-<span class="hljs-number">182</span>.<span class="hljs-number">4129</span>.<span class="hljs-number">33</span> /opt</code></pre>
+<p>进入文件夹下</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">cd</span> /opt/idea-IU-<span class="hljs-number">182</span>.<span class="hljs-number">4129</span>.<span class="hljs-number">33</span>/bin</code></pre>
+<p>执行以下命令即可打开 IDEA， 但不建议这么做，建议先创建快捷方式。</p>
+<pre><code class="hljs jboss-cli">sudo <span class="hljs-string">./idea.sh</span></code></pre>
+<h3 id="创建快捷方式-2"><a href="#创建快捷方式-2" class="headerlink" title="创建快捷方式"></a>创建快捷方式</h3><p>&nbsp;&nbsp;Ubuntu 在 /usr/share/applications 目录下存放着系统应用程序的快捷启动图标，我们可以在这里创建 IDEA 的快捷方式。<br>&nbsp;&nbsp;首先进入文件夹</p>
+<pre><code class="hljs awk">cd <span class="hljs-regexp">/usr/</span>share/applications</code></pre>
+<p>&nbsp;&nbsp;创建快捷方式</p>
+<pre><code class="hljs reasonml">sudo vim <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">IDEA</span>.</span></span>desktop</code></pre>
+<p>&nbsp;&nbsp;添加如下内容：</p>
+<pre><code class="hljs routeros">[Desktop Entry]
+<span class="hljs-attribute">Name</span>=IDEA
+Name[zh_CN]=IDEA
+<span class="hljs-attribute">Comment</span>=IDEA
+<span class="hljs-attribute">Exec</span>=/opt/idea-IU-182.4129.33/bin/idea.sh
+<span class="hljs-attribute">Icon</span>=/opt/idea-IU-182.4129.33/bin/idea.png
+<span class="hljs-attribute">Terminal</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attribute">Type</span>=Application
+<span class="hljs-attribute">Categories</span>=Application;
+<span class="hljs-attribute">Encoding</span>=UTF-8
+<span class="hljs-attribute">StartupNotify</span>=<span class="hljs-literal">true</span></code></pre>
+<p>&nbsp;&nbsp;然后保存退出，执行：</p>
+<pre><code class="hljs reasonml">sudo chmod +x <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">IDEA</span>.</span></span>desktop</code></pre>
+<p>&nbsp;&nbsp;即可从菜单栏打开 IDEA 了。</p>
+<h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h2><h3 id="安装-4"><a href="#安装-4" class="headerlink" title="安装"></a>安装</h3><p>&nbsp;&nbsp;首先从 <a target="_blank" rel="noopener" href="https://www.anaconda.com/download/#linux">https://www.anaconda.com/download/#linux</a> 下载 Anaconda。<br>&nbsp;&nbsp;执行以下命令安装：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">bash</span> Anaconda<span class="hljs-number">3</span>-<span class="hljs-number">5</span>.<span class="hljs-number">2</span>.<span class="hljs-number">0</span>-Linux-x<span class="hljs-number">86</span>_<span class="hljs-number">64</span>.sh</code></pre>
+<p>&nbsp;&nbsp;因为 Anaconda 的脚本只会添加到 ~/.bashrc 下，而使用 zsh 的需要在 ~/.zshrc 下添加</p>
+<pre><code class="hljs routeros"><span class="hljs-comment"># added by Anaconda3 installer</span>
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-string">&quot;/home/vanxnf/anaconda3/bin:<span class="hljs-variable">$PATH</span>&quot;</span></code></pre>
+<p>&nbsp;&nbsp;然后执行：</p>
+<pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.zshrc</code></pre>
+<p>&nbsp;&nbsp;输入：</p>
+<pre><code class="hljs ebnf"><span class="hljs-attribute">python</span></code></pre>
+<p>&nbsp;&nbsp;显示类似以下内容：</p>
+<pre><code class="hljs routeros">Python 3.6.5 |Anaconda, Inc.| (default, Apr 29 2018, 16:14:56)
+[GCC 7.2.0] on linux
+Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string">&quot;copyright&quot;</span>, <span class="hljs-string">&quot;credits&quot;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;license&quot;</span> <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt;</code></pre>
+<p>&nbsp;&nbsp;即安装成功。</p>
+<h2 id="Putty"><a href="#Putty" class="headerlink" title="Putty"></a>Putty</h2><p>&nbsp;&nbsp;使用以下命令安装即可：</p>
+<pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> install putty</code></pre>
+<p>&nbsp;&nbsp;说一下 Ubuntu GNOME 环境下 putty 的复制粘贴，其实 GNOME 自带这个功能，<strong>只需要鼠标选中高亮要复制的内容，在需要粘贴的地方按鼠标中键即可</strong>。</p>
+<h2 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h2><p>&nbsp;&nbsp;从官网下载 <a target="_blank" rel="noopener" href="https://atom.io/">https://atom.io/</a> ，然后使用以下命令安装：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> dpkg -i atom-amd<span class="hljs-number">64</span>.deb</code></pre>
+
+<h2 id="Clion"><a href="#Clion" class="headerlink" title="Clion"></a>Clion</h2><h3 id="安装-5"><a href="#安装-5" class="headerlink" title="安装"></a>安装</h3><p>&nbsp;&nbsp;首先从官网下载 <a target="_blank" rel="noopener" href="https://www.jetbrains.com/clion/whatsnew/">https://www.jetbrains.com/clion/whatsnew/</a> 软件压缩包。</p>
+<p>&nbsp;&nbsp;将压缩包解压并移动到 /opt/ 下：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">tar</span> -xf CLion-<span class="hljs-number">2018</span>.<span class="hljs-number">2</span>.<span class="hljs-number">3</span>.tar.gz
+<span class="hljs-attribute">sudo</span> mv clion-<span class="hljs-number">2018</span>.<span class="hljs-number">2</span>.<span class="hljs-number">3</span> /opt/</code></pre>
+<p>&nbsp;&nbsp;进入文件夹下：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">cd</span> /opt/clion-<span class="hljs-number">2018</span>.<span class="hljs-number">2</span>.<span class="hljs-number">3</span>/bin</code></pre>
+<p>&nbsp;&nbsp;执行以下命令即可打开 CLion， 但不建议这么做，建议先创建快捷方式。</p>
+<pre><code class="hljs jboss-cli">sudo <span class="hljs-string">./clion.sh</span></code></pre>
+
+<h3 id="创建快捷方式-3"><a href="#创建快捷方式-3" class="headerlink" title="创建快捷方式"></a>创建快捷方式</h3><p>&nbsp;&nbsp;Ubuntu 在 /usr/share/applications 目录下存放着系统应用程序的快捷启动图标，我们可以在这里创建 CLion 的快捷方式。首先进入文件夹:</p>
+<pre><code class="hljs awk">cd <span class="hljs-regexp">/usr/</span>share/applications</code></pre>
+<p>&nbsp;&nbsp;创建快捷方式:</p>
+<pre><code class="hljs reasonml">sudo vim <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Clion</span>.</span></span>desktop</code></pre>
+<p>&nbsp;&nbsp;添加如下内容：</p>
+<pre><code class="hljs routeros">[Desktop Entry]
+<span class="hljs-attribute">Name</span>=CLion
+Name[zh_CN]=Clion
+<span class="hljs-attribute">Comment</span>=CLion
+<span class="hljs-attribute">Exec</span>=/opt/clion-2018.2.3/bin/clion.sh
+<span class="hljs-attribute">Icon</span>=/opt/clion-2018.2.3/bin/clion.png
+<span class="hljs-attribute">Terminal</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attribute">Type</span>=Application
+<span class="hljs-attribute">Categories</span>=Application;
+<span class="hljs-attribute">Encoding</span>=UTF-8
+<span class="hljs-attribute">StartupNotify</span>=<span class="hljs-literal">true</span></code></pre>
+<p>&nbsp;&nbsp;然后保存退出，执行：</p>
+<pre><code class="hljs reasonml">sudo chmod +x <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Clion</span>.</span></span>desktop</code></pre>
+<p>&nbsp;&nbsp;即可从菜单栏打开 CLion 了。</p>
+<h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Programming/">Programming</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%BC%80%E5%8F%91/">开发</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/09/02/%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">一些小技巧</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/01/Ubuntu18-04-LTS-dash-to-dock-bug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                        <span class="hidden-mobile">Ubuntu18.04 LTS dash to dock bug解决方案</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Ubuntu 18.04 LTS 开发环境配置&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

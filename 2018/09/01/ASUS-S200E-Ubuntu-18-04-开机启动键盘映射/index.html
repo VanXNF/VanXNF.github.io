@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>ASUS S200E Ubuntu 18.04 开机启动键盘映射 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2018-09-01 20:08" pubdate>
+      September 1, 2018 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      698 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">ASUS S200E Ubuntu 18.04 开机启动键盘映射</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="设置键盘映射"><a href="#设置键盘映射" class="headerlink" title="设置键盘映射"></a>设置键盘映射</h1><p>&nbsp;&nbsp;老笔电 S200E 跑 Win10 有点吃力了，键盘上 Caps Lock 与左 Shift 键又坏了。趁着假期在家，在X宝上买了配套的键盘换上了（第一次拆超极本，真的费劲），又安装了一下 Ubuntu 18.04 LTS，重获新生啊有没有。</p>
+<hr>
+<p>&nbsp;&nbsp;但是当我安装好Ubuntu，简单美化后，居然发现这款电脑键盘右上角有个专门的功能键？？？功能键就功能键吧，这时才发现X宝上买来换上的键盘右上角这颗功能键键帽印了 “insert” ？？？这怎么能忍，最关键的是这颗键在 Ubuntu 上就是个摆设：</p>
+<p>&nbsp;&nbsp;终端下输入 </p>
+<pre><code class="hljs ebnf"><span class="hljs-attribute">xev</span></code></pre>
+<p>&nbsp;&nbsp;或者</p>
+<pre><code class="hljs 1c">xev <span class="hljs-string">| grep keycode</span></code></pre>
+<p>&nbsp;&nbsp;会弹出图形窗口，此时<strong>按键盘即可查看对应键信息</strong>。一看keycode 248 keysym空 ？？？</p>
+<p>&nbsp;&nbsp;于是 Plan A 走起，然而事情并不简单，扣下旧键帽一看内部搭扣结构，果然和新的不一样，因吹斯听，换键帽路线 OVER；那就只能 Plan B了，本来键帽正确键闲着也就闲着好了，然而它印了 insert 那一切就不一样了，这是要逼死强迫症啊，然而作者算是Linux初级用户，没法自己想出解决方案，于是开始百度谷歌键盘映射，还真给我找到了，这里记录亲身测试过的一种（也是对我这种情况最简单的一种）</p>
+<p>&nbsp;&nbsp;首先用上述指令获取<strong>想修改的键的keycode</strong>，以及<strong>目标键的键值（keysym）</strong></p>
+<p>&nbsp;&nbsp;之后，就在 “~” 目录下创建 <strong>.xmodmaprc</strong>（在别的目录下也行啦）文件</p>
+<pre><code class="hljs jboss-cli">sudo vim ～<span class="hljs-string">/.xmodmaprc</span></code></pre>
+<p>&nbsp;&nbsp;输入内容如下（248是我这颗空闲的功能键的 keycode，而 0xff63 则是键帽上的 insert 对应的 keysym）</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">keycode</span> <span class="hljs-number">248</span> = <span class="hljs-number">0</span>xff<span class="hljs-number">63</span> <span class="hljs-number">0</span>xff<span class="hljs-number">63</span></code></pre>
+<p>&nbsp;&nbsp;保存之后，在终端输入</p>
+<pre><code class="hljs jboss-cli">xmodmap ~<span class="hljs-string">/.xmodmaprc</span></code></pre>
+<p>&nbsp;&nbsp;即可直接生效。</p>
+<h1 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h1><p>&nbsp;&nbsp;但是每次开机后要重新执行一次，很麻烦对不对。于是想到了开机自动执行脚本，然而作者真的菜，搜遍搜索引擎，从 rc.local 到 systemd 全都失败了，看其他大佬的评论大概是xmodmap依赖于x桌面，没加载好前是执行不了的，然而还是没法解决。前前后后试了一天，都要放弃了，终于在个小论坛里看到个方案，尝试了一下真的成功了。</p>
+<p>&nbsp;&nbsp;Ubuntu 自带一个 <strong>Startup Applications Preferences</strong></p>
+<p>&nbsp;&nbsp;点击 add，name可以随便写，command中填</p>
+<pre><code class="hljs awk"><span class="hljs-regexp">/bin/</span>bash -c <span class="hljs-string">&quot;sleep 30; /usr/bin/xmodmap ~/.xmodmaprc&quot;</span></code></pre>
+<p>&nbsp;&nbsp;Comment也可以随意填写，上面的代码里后面的是文件路径。</p>
+<p><img src="https://s1.ax1x.com/2018/09/01/PxVtPg.png" srcset="/img/loading.gif"></p>
+<p>&nbsp;&nbsp;重启后终于成功了。</p>
+<p>&nbsp;&nbsp;完结撒花。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Programming/">Programming</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/ASUS/">ASUS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/S200E/">S200E</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/">开机启动</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84/">键盘映射</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/09/01/%E6%9C%BA%E6%A2%B0%E9%9D%A9%E5%91%BDX6Ti-M2-%E5%AE%89%E8%A3%85-Ubuntu1804-LTS-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">机械革命 X6Ti-M2 安装 Ubuntu1804 LTS 注意事项</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/01/Ubuntu-1804-%E8%93%9D%E7%89%99%E9%BC%A0%E6%A0%87%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-Bluetooth-Mouse-Won-t-Connect-after-Reboot/">
+                        <span class="hidden-mobile">Ubuntu 1804 蓝牙鼠标连接失败问题解决 Bluetooth Mouse Won't Connect after Reboot</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "ASUS S200E Ubuntu 18.04 开机启动键盘映射&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

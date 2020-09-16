@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Hexo 博客 Hiker 主题增加文章最后编辑时间，并按照最后编辑时间排序 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2018-09-03 16:12" pubdate>
+      September 3, 2018 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Hexo 博客 Hiker 主题增加文章最后编辑时间，并按照最后编辑时间排序</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&nbsp;&nbsp;写在前面，建好了 Hexo 博客之后，慢慢的文章也写了十几篇了，发现一个问题：无法知道这篇文章最后更新于什么时候。一篇文章发布得越早，就在越下面，可是我想让它把我重新编辑过的文章排到前头来啊，同时也想让文章能够显示最后更新于什么时候。有需求那就去解决啊，可是搜索了谷歌、百度，发现全世界都用的是 Next 主题，给的方案也是针对 Next 主题的，对我所用的 <code>Hiker 主题</code>完全不适用啊，于是，经过一番摸索，就有了这篇文章。废话结束了，下面开始正文。</p>
+<h1 id="开启-Updated-排序"><a href="#开启-Updated-排序" class="headerlink" title="开启 Updated 排序"></a>开启 Updated 排序</h1><p>&nbsp;&nbsp;在 Hexo 内部，是支持 updated 这个参数的，意思就是，你在建立文章的时候，已经默认地给你添加了一个名为 update 的参数。但这个数据只是添加在 db.json 中，并不会添加到你的 md 文件中。但它的效果其实和你直接在 md 文件中写是一样的，像下面这样：</p>
+<pre><code class="hljs subunit">title:
+date:
+updated:
+<span class="hljs-keyword">tags:</span>
+categories:</code></pre>
+<p>&nbsp;&nbsp;但是写在 md 文件中更加的方便，能够手动的控制更新日期，避免 db.json 被删除后，‘更新日期’数据丢失的情况出现。因此我们需要让 Hexo 默认生成的 post格式中存在 <code>updated</code> 这个属性，以免每次需要手动输入。(手写是不可能手写的，这辈子都不可能的)</p>
+<h2 id="调整-post-默认生成格式"><a href="#调整-post-默认生成格式" class="headerlink" title="调整 post 默认生成格式"></a>调整 post 默认生成格式</h2><p>&nbsp;&nbsp;我的 Hexo 博客主目录为 <code>Hexo</code>，之后的操作就在这个目录下了。 post 的生成模板在  <code>Hexo/scaffolds/</code> 里，那个 <code>post.md</code>就是了。打开这个文件，因为生成的时候发布时间和最后更新时间一样的嘛，改成如下内容后保存即可：</p>
+<pre><code class="hljs yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;
+<span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;
+<span class="hljs-attr">updated:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;
+<span class="hljs-meta">---</span></code></pre>
+
+<p>&nbsp;&nbsp;这个时候你就可以生成一篇新的博客看看有没有效果了。你想加别的内容也是这样修改。之后修改了文章内容之后，把 updated 后面的时间改一下就 OK 了。</p>
+<p>&nbsp;&nbsp;使用 Atom 写博客的快速输入 update 时间戳，可以查看 <a href="/2018/09/03/%E5%9C%A8-Atom-%E4%B8%AD%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%B4%E6%88%B3/" title="在 Atom 中快速输入时间戳">在 Atom 中快速输入时间戳</a></p>
+<h2 id="调整-Hexo-主配置文件"><a href="#调整-Hexo-主配置文件" class="headerlink" title="调整 Hexo 主配置文件"></a>调整 Hexo 主配置文件</h2><p>&nbsp;&nbsp;然后找到主配置文件 <code>_config.yml</code>（<strong>注意：不是主题的 _config.yml</strong>），修改 index_generator 的 order_by 为 -updated 即可开启更新时间排序，你最后修改过的文章就会显示到最前面了:</p>
+<pre><code class="hljs sas"># Home <span class="hljs-meta">page</span> setting
+# path: Root path for your blogs <span class="hljs-meta">index</span> <span class="hljs-meta">page</span>. (default = <span class="hljs-string">&#x27;&#x27;</span>)
+# per_page: Posts displayed per <span class="hljs-meta">page</span>. (0 = disable pagination)
+# order_by: Posts <span class="hljs-meta">order</span>. (<span class="hljs-meta">Order</span> <span class="hljs-meta">by</span> date descending <span class="hljs-meta">by</span> default)
+index_generator:
+  path: <span class="hljs-string">&#x27;&#x27;</span>
+  per_page: 10
+  order_by: -updated</code></pre>
+<p>&nbsp;&nbp;但是你发现修改过之后，文章只显示到时期，根本看不到时间对不对，那么继续修改 date_format 部分，改成如下的 <code>YYYY-MM-DD HH:mm:ss</code>格式，再重新生成一下网页就能看到具体的时间了。</p>
+<pre><code class="hljs clean"># Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format <span class="hljs-keyword">as</span> defined <span class="hljs-keyword">in</span>
+## http:<span class="hljs-comment">//momentjs.com/docs/#/displaying/format/</span>
+date_format: YYYY-MM-DD HH:mm:ss
+time_format: HH:mm:ss</code></pre>
+
+<h1 id="修改-Hiker-主题"><a href="#修改-Hiker-主题" class="headerlink" title="修改 Hiker 主题"></a>修改 Hiker 主题</h1><p>&nbsp;&nbsp;Hiker 主题默认是没有更新时间显示的，所以需要自己修改，新增一个更新时间显示。<code>hiker</code> 文件夹位于 <code>Hexo/themes/hiker</code> 。首先查看了 <code>hiker/layout</code> 文件夹下的 <code>post.ejs</code> 文件，发现里面引入的是 <code>_partial/article</code>的内容，好的，找到  <code>hiker/layout/_partial</code> 文件夹下的 <code>article.ejs</code>，因为是修改时间嘛，那就找 date 相关的内容，于是找到了 9-13 行：</p>
+<pre><code class="hljs mojolicious"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;article-meta&quot;</span>&gt;</span></span>
+<span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="perl">- partial(<span class="hljs-string">&#x27;post/date&#x27;</span>, &#123;class_name: <span class="hljs-string">&#x27;article-date&#x27;</span>, date_format: null&#125;) </span><span class="xml"><span class="hljs-tag">%&gt;</span></span>
+<span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="perl">- partial(<span class="hljs-string">&#x27;post/category&#x27;</span>) </span><span class="xml"><span class="hljs-tag">%&gt;</span></span>
+<span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="perl">- partial(<span class="hljs-string">&#x27;post/busuanzi-analytics&#x27;</span>,&#123;<span class="hljs-keyword">index</span>: <span class="hljs-keyword">index</span>, class_name: <span class="hljs-string">&#x27;article-views&#x27;</span>&#125;) </span><span class="xml"><span class="hljs-tag">%&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+<p>&nbsp;&nbsp;看第10行，原来是引用的 <code>post/date</code>，那就打开 <code>hiker/layout/_partial/post</code> 文件夹下的 <code>date.ejs</code>，看到如下内容：</p>
+<pre><code class="hljs erb"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> <span class="hljs-keyword">if</span> (!is_current(<span class="hljs-string">&quot;about&quot;</span>, <span class="hljs-literal">false</span>))&#123; </span><span class="xml"><span class="hljs-tag">%&gt;</span></span>
+<span class="xml">	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&lt;%-</span></span></span><span class="ruby"> url_for(post.path) </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&lt;%=</span></span></span><span class="ruby"> class_name </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span>&gt;</span></span>
+<span class="xml">	  <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">&quot;&lt;%=</span></span></span><span class="ruby"> date_xml(post.date) </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">&quot;datePublished&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> date(post.date, date_format) </span><span class="xml"><span class="hljs-tag">%&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span></span>
+<span class="xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> &#125; </span><span class="xml"><span class="hljs-tag">%&gt;</span></span></code></pre>
+<p>&nbsp;&nbsp;到这里也就清楚了，我们主要需要关注的文件是 <code>hiker/layout/_partial/post/date.ejs</code>、<code>hiker/layout/_partial/article.ejs</code>，这两个文件。那么接下来开始修改。</p>
+<h2 id="新建-updated-ejs-文件"><a href="#新建-updated-ejs-文件" class="headerlink" title="新建 updated.ejs 文件"></a>新建 updated.ejs 文件</h2><p>&nbsp;&nbsp;由于 <code>date.ejs</code> 这个文件在很多地方会被引用到，可谓是牵一发而动全身啊，如果你改在这个文件上，就会发现所有原本出现发布时间的地方同时还会有更新时间，看上去真的是有点丑啊。我不需要它在文章正文以外的部分出现更新时间，所以选择新建一个 <code>updated.ejs</code> 文件，就放在 <code>date.ejs</code> 所在的 post 文件夹。<br><code>Updated.ejs</code> 内容如下：</p>
+<pre><code class="hljs erb"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> <span class="hljs-keyword">if</span> (!is_current(<span class="hljs-string">&quot;about&quot;</span>, <span class="hljs-literal">false</span>))&#123; </span><span class="xml"><span class="hljs-tag">%&gt;</span></span>
+<span class="xml">	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&lt;%-</span></span></span><span class="ruby"> url_for(post.path) </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&lt;%=</span></span></span><span class="ruby"> class_name </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span>&gt;</span></span>
+<span class="xml">	  <span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> _<span class="hljs-number">_</span>(<span class="hljs-string">&#x27;updated&#x27;</span>) </span><span class="xml"><span class="hljs-tag">%&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">&quot;&lt;%=</span></span></span><span class="ruby"> date_xml(post.updated) </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">&quot;dateUpdated&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> date(post.updated, date_format) </span><span class="xml"><span class="hljs-tag">%&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span></span>
+<span class="xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> &#125; </span><span class="xml"><span class="hljs-tag">%&gt;</span></span></code></pre>
+<p>&nbsp;&nbsp;大体上与 date.ejs 内容相仿，post.date 改成了 post.updated，细心的读者还会发现，多了一个 <code>&lt;%= __(&#39;updated&#39;) %&gt;</code>，这是因为原来的格式只显示时间，那么当我们全部修改好之后，就会发现文章下面确实有两个时间，但不知道哪个是哪个，看的人很乱（这里不接受修改时间当然比发布时间迟的一看就知道了这样的吐槽），为了用户体验，还是加上提示比较好。同样的，可以将 <code>date.ejs</code> 的内容修改成如下所示：</p>
+<pre><code class="hljs erb"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> <span class="hljs-keyword">if</span> (!is_current(<span class="hljs-string">&quot;about&quot;</span>, <span class="hljs-literal">false</span>))&#123; </span><span class="xml"><span class="hljs-tag">%&gt;</span></span>
+<span class="xml">	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&lt;%-</span></span></span><span class="ruby"> url_for(post.path) </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&lt;%=</span></span></span><span class="ruby"> class_name </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span>&gt;</span></span>
+<span class="xml">	  <span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> _<span class="hljs-number">_</span>(<span class="hljs-string">&#x27;published&#x27;</span>) </span><span class="xml"><span class="hljs-tag">%&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">&quot;&lt;%=</span></span></span><span class="ruby"> date_xml(post.date) </span><span class="xml"><span class="hljs-tag"><span class="hljs-string">%&gt;&quot;</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">&quot;datePublished&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> date(post.date, date_format) </span><span class="xml"><span class="hljs-tag">%&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span></span>
+<span class="xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> &#125; </span><span class="xml"><span class="hljs-tag">%&gt;</span></span></code></pre>
+
+<h2 id="增加字段"><a href="#增加字段" class="headerlink" title="增加字段"></a>增加字段</h2><p>&nbsp;&nbsp;由于 date.ejs 和 updated.ejs 中分别引入了 published 和 updated 字段，因此我们需要去在语言文件中新增对应的字段，语言文件在 <code>hiker/languages</code>中，你博客设置成什么语言，就修改对应的语言文件，没指定就修改 default.yml 文件。这里以 default.yml 为例，打开文件，在最上面增加两行：</p>
+<pre><code class="hljs avrasm"><span class="hljs-symbol">published:</span> Published
+<span class="hljs-symbol">updated:</span> Updated</code></pre>
+<p>&nbsp;&nbsp;保存退出即可。简单解释一下，格式为<code>字段名：字段值</code>，字段名不变，字段值可以随意更改。</p>
+<h2 id="修改-article-ejs-文件"><a href="#修改-article-ejs-文件" class="headerlink" title="修改 article.ejs 文件"></a>修改 article.ejs 文件</h2><p>&nbsp;&nbsp;新增了一个 update.ejs 文件，我们需要将它引用进去。打开 article.ejs 文件，找到第 10 行： <code>&lt;%- partial(&#39;post/date&#39;, &#123;class_name: &#39;article-date&#39;, date_format: null&#125;) %&gt;</code>，在下面添加一行 <code>&lt;%- partial(&#39;post/updated&#39;, &#123;class_name: &#39;article-date&#39;, date_format: null&#125;) %&gt;</code>，保存退出即可。</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>&nbsp;&nbsp;执行一下 <code>hexo g</code>、<code>hexo server</code> 看看效果：<br><img src="https://s1.ax1x.com/2018/09/03/Pz4bi4.png" srcset="/img/loading.gif"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Programming/">Programming</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Hiker/">Hiker</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Updated/">Updated</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/">更新时间</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/09/03/%E5%9C%A8-Atom-%E4%B8%AD%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%B4%E6%88%B3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">在 Atom 中快速输入时间戳</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/02/Ubuntu-18-04-LTS-Putty-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">
+                        <span class="hidden-mobile">Ubuntu 18.04 LTS Putty 字体设置</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Hexo 博客 Hiker 主题增加文章最后编辑时间，并按照最后编辑时间排序&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

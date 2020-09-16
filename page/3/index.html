@@ -1,0 +1,859 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/03/Hexo-%E5%8D%9A%E5%AE%A2-Hiker-%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E6%9C%80%E5%90%8E%E7%BC%96%E8%BE%91%E6%97%B6%E9%97%B4%EF%BC%8C%E5%B9%B6%E6%8C%89%E7%85%A7%E6%9C%80%E5%90%8E%E7%BC%96%E8%BE%91%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F/">Hexo 博客 Hiker 主题增加文章最后编辑时间，并按照最后编辑时间排序</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/03/Hexo-%E5%8D%9A%E5%AE%A2-Hiker-%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E6%9C%80%E5%90%8E%E7%BC%96%E8%BE%91%E6%97%B6%E9%97%B4%EF%BC%8C%E5%B9%B6%E6%8C%89%E7%85%A7%E6%9C%80%E5%90%8E%E7%BC%96%E8%BE%91%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F/">
+          
+          
+            
+          
+          前言&nbsp;&nbsp;写在前面，建好了 Hexo 博客之后，慢慢的文章也写了十几篇了，发现一个问题：无法知道这篇文章最后更新于什么时候。一篇文章发布得越早，就在越下面，可是我想让它把我重新编辑过的文章排到前头来啊，同时也想让文章能够显示最后更新于什么时候。有需求那就去解决啊，可是搜索了谷歌、百度，发现全世界都用的是 Next 主题，给的方案也是针对 Next 主题的，对我所用的 Hiker 
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-03 16:12" pubdate>
+              2018-09-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+              <a href="/tags/Hiker/">Hiker</a>
+            
+              <a href="/tags/Updated/">Updated</a>
+            
+              <a href="/tags/%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/">更新时间</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/02/Ubuntu-18-04-LTS-Putty-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">Ubuntu 18.04 LTS Putty 字体设置</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/02/Ubuntu-18-04-LTS-Putty-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">
+          
+          
+            
+          
+          前言&nbsp;&nbsp;在 Ubuntu 下 putty 的字体可以说是小得辣眼睛了，难受的不得了。接下来讲讲怎么换字体及设置字号，以及设置窗体行列数来让代码显示舒服一点。
+准备工作&nbsp;&nbsp;个人而言，比较喜欢 consola 字体，因此在网上找到了网友制作的微软雅黑 consola 混合字体，安装到系统上后准备工作就完成了。当然你可以选择你自己喜欢的字体。
+更改 putty 字
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-02 23:47" pubdate>
+              2018-09-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/Putty/">Putty</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/02/Hexo-%E4%B8%BB%E9%A2%98%E5%90%8C%E6%AD%A5/">Hexo 主题同步</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/02/Hexo-%E4%B8%BB%E9%A2%98%E5%90%8C%E6%AD%A5/">
+          
+          
+            
+          
+          
+写在前面，本篇解决方案针对的是以 Ubuntu 18.04 LTS GitHub Pages + Hexo 搭建博客 搭建出来的 Hexo 博客，但对一般搭建方法也有一定参考价值，具体请自行判断。
+
+问题&nbsp;&nbsp;由于修改hexo主题的默认设置需要使用git管理来方便备份，所以如何同步主题的设置也是一件很重要的事。
+原因&nbsp;&nbsp;Hiker的使用方法
+git clon
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-02 20:42" pubdate>
+              2018-09-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+              <a href="/tags/%E4%B8%BB%E9%A2%98/">主题</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/02/%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/">一些小技巧</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/02/%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+          
+          
+            
+          
+          获取 github 中图片等文件的 raw 链接&nbsp;&nbsp;先在 github 仓库中找到该文件，点击该文件，打开后在浏览器的 url 后面加上 ？raw=true ，并回车跳转，即可获取该文件的 raw 链接。
+Hexo 博客站内文章链接&nbsp;&nbsp;首先需要知道要链接的站内文章的 md 文件的文件名（不包含 .md），以如下形式即可形成链接，其中显示文字部分可选，不填则会
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-02 12:25" pubdate>
+              2018-09-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/01/Ubuntu-18-04-LTS-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Ubuntu 18.04 LTS 开发环境配置</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/01/Ubuntu-18-04-LTS-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+          
+          
+            
+          
+          JDK 配置方法一 手动下载安装下载并安装&nbsp;&nbsp;首先下载 JDK8 ，解压到  /usr/lib/jvm ，我下载的是 jdk-8u181-linux-x64.tar.gz，执行
+sudo mkdir /usr/lib/jvm
+sudo tar -zxvf jdk-8u181-linux-x64.tar.gz -C /usr/lib/jvm
+配置环境变量&nbsp;&nbsp;由
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-01 20:23" pubdate>
+              2018-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/%E5%BC%80%E5%8F%91/">开发</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/01/Ubuntu18-04-LTS-dash-to-dock-bug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04 LTS dash to dock bug解决方案</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/01/Ubuntu18-04-LTS-dash-to-dock-bug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+          
+          
+            
+          
+          &nbsp;&nbsp;截至到目前dash to dock GNOME 3.28第63版依旧存在登陆界面出现dock栏的问题。
+&nbsp;&nbsp;这其实是自带的dock栏导致的，在Extensions中即使关闭它也会有这个问题，输入以下命令将自带dock移动到～下，重启后即可解决此问题(也可移动到其他目录或者直接rm删除)。Ubuntu 更新后需要再执行一遍，因为更新会修复自带的 dock。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-01 20:21" pubdate>
+              2018-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/dash-to-dock/">dash to dock</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/01/Ubuntu-18-04-LTS-%E4%BD%BF%E7%94%A8-Minecraft-%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%90%AF%E5%8A%A8%E5%99%A8-HMCL/">Ubuntu 18.04 LTS 使用 Minecraft 我的世界第三方启动器 HMCL</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/01/Ubuntu-18-04-LTS-%E4%BD%BF%E7%94%A8-Minecraft-%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%90%AF%E5%8A%A8%E5%99%A8-HMCL/">
+          
+          
+            
+          
+          下载安装&nbsp;&nbsp;首先在下方链接下载第三方启动器：
+
+http://www.mcbbs.net/thread-142335-1-1.html
+
+&nbsp;&nbsp;由于是在 Ubuntu 下运行，下载 jar 版本的即可。
+&nbsp;&nbsp;在将 jar 文件复制到文件夹中，这里我放置在 ~/Documents/MC 下，首先创建这个文件夹：
+mkdir ~/Documen
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-01 20:20" pubdate>
+              2018-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/Minecraft/">Minecraft</a>
+            
+              <a href="/tags/HMCL/">HMCL</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/01/Ubuntu-18-04-LTS-QQ%E3%80%81%E5%BE%AE%E4%BF%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu 18.04 LTS QQ、微信解决方案</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/01/Ubuntu-18-04-LTS-QQ%E3%80%81%E5%BE%AE%E4%BF%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+          
+          
+            
+          
+          #Deepin-wine 环境安装
+&nbsp;&nbsp;首先安装deepin-wine环境：https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu 下载zip包（或用git方式克隆），解压到本地文件夹，在文件夹中打开终端，切换到 root 账户，输入：
+sh ./install.sh
+安装应用容器&nbsp;&nbsp;然后安装 deepin.com
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-01 20:19" pubdate>
+              2018-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Software/">Software</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/QQ/">QQ</a>
+            
+              <a href="/tags/%E5%BE%AE%E4%BF%A1/">微信</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/01/%E6%9C%BA%E6%A2%B0%E9%9D%A9%E5%91%BDX6Ti-M2-%E5%AE%89%E8%A3%85-Ubuntu1804-LTS-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">机械革命 X6Ti-M2 安装 Ubuntu1804 LTS 注意事项</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/01/%E6%9C%BA%E6%A2%B0%E9%9D%A9%E5%91%BDX6Ti-M2-%E5%AE%89%E8%A3%85-Ubuntu1804-LTS-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+          
+          
+            
+          
+          &nbsp;&nbsp;这台机械革命买来有日子了，最初的时候网上教程不全，安装 Ubuntu 总是卡开机画面，现在教程也有一些了，但还是打算稍微记一下关键步骤，方便以后安装。
+
+一&nbsp;&nbsp;此电脑安装 Ubuntu 时，需要禁用 acpi 才能进入。
+&nbsp;&nbsp;Ubuntu 安装界面通过键盘定位到 Install…… 选项，然后按 e 键进入编辑模式。
+&nbsp;&n
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-01 20:11" pubdate>
+              2018-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/%E6%9C%BA%E6%A2%B0%E9%9D%A9%E5%91%BD/">机械革命</a>
+            
+              <a href="/tags/X6Ti-M2/">X6Ti-M2</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/09/01/ASUS-S200E-Ubuntu-18-04-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84/">ASUS S200E Ubuntu 18.04 开机启动键盘映射</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/09/01/ASUS-S200E-Ubuntu-18-04-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84/">
+          
+          
+            
+          
+          设置键盘映射&nbsp;&nbsp;老笔电 S200E 跑 Win10 有点吃力了，键盘上 Caps Lock 与左 Shift 键又坏了。趁着假期在家，在X宝上买了配套的键盘换上了（第一次拆超极本，真的费劲），又安装了一下 Ubuntu 18.04 LTS，重获新生啊有没有。
+
+&nbsp;&nbsp;但是当我安装好Ubuntu，简单美化后，居然发现这款电脑键盘右上角有个专门的功能键？？？功能键
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-09-01 20:08" pubdate>
+              2018-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Programming/">Programming</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ASUS/">ASUS</a>
+            
+              <a href="/tags/S200E/">S200E</a>
+            
+              <a href="/tags/Ubuntu-18-04-LTS/">Ubuntu 18.04 LTS</a>
+            
+              <a href="/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/">开机启动</a>
+            
+              <a href="/tags/%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84/">键盘映射</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "An elegant Material-Design theme for Hexo&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>算法设计与分析 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2018-09-11 17:28" pubdate>
+      September 11, 2018 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      825 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">算法设计与分析</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h1><h2 id="算法学习的重要性"><a href="#算法学习的重要性" class="headerlink" title="算法学习的重要性"></a>算法学习的重要性</h2><p>&nbsp;&nbsp;主要内容：</p>
+<ul>
+<li>递归/分治</li>
+<li>动态规划</li>
+<li>贪心算法</li>
+<li>回溯算法</li>
+<li>分枝限界</li>
+<li>高级数据结构</li>
+<li>复杂度理论</li>
+<li>随机算法</li>
+<li>近似算法</li>
+<li>并行算法</li>
+</ul>
+<h2 id="算法的特性"><a href="#算法的特性" class="headerlink" title="算法的特性"></a>算法的特性</h2><ul>
+<li>有输入：有外部提供的量作为算法的输入。</li>
+<li>有输出：算法产生至少一个量作为输出。</li>
+<li>确定性：组成算法的每条指令都是清晰的，无歧义的。</li>
+<li>有限性：算法中每条指令的执行次数是有限的，执行每条指令的时间也是有限的。</li>
+</ul>
+<h2 id="复杂性分析"><a href="#复杂性分析" class="headerlink" title="复杂性分析"></a>复杂性分析</h2><p>&nbsp;&nbsp;算法复杂性即算法所需要的计算机资源。</p>
+<h3 id="暴力求解方法"><a href="#暴力求解方法" class="headerlink" title="暴力求解方法"></a>暴力求解方法</h3><p>&nbsp;&nbsp;Brute：force；暴风，强力；布鲁特-福斯</p>
+<p>&nbsp;&nbsp;常用思路：</p>
+<ol>
+<li>遍历解空间</li>
+<li>答案表<ul>
+<li>可排序</li>
+<li>不可排序</li>
+</ul>
+</li>
+</ol>
+<h3 id="时间复杂性-空间复杂性"><a href="#时间复杂性-空间复杂性" class="headerlink" title="时间复杂性/空间复杂性"></a>时间复杂性/空间复杂性</h3><p>$C = F(N,I,A)$</p>
+<p>&nbsp;&nbsp;N 是问题的规模，I 是具体输入。</p>
+<p>&nbsp;&nbsp;主要考虑以下两个方面：</p>
+<ol>
+<li>问题的规模</li>
+<li>具体的输入</li>
+</ol>
+<h3 id="最优、最差、平均运行时间"><a href="#最优、最差、平均运行时间" class="headerlink" title="最优、最差、平均运行时间"></a>最优、最差、平均运行时间</h3><ul>
+<li><p>worst-case:</p>
+<p>$$T_{max}(N) = {_{I\in D}^{max}}\ T(N,I)$$</p>
+</li>
+<li><p>best-case</p>
+<p>$$T_{min}(N) = \  {_{I\in D}^{min}}\ T(N,I)$$</p>
+</li>
+<li><p>average-case</p>
+<p>$$T_{avg}(N) = \sum_{I\in D}\ P(I) T(N,I)$$</p>
+</li>
+</ul>
+<h3 id="渐近符号"><a href="#渐近符号" class="headerlink" title="渐近符号"></a>渐近符号</h3><ol>
+<li><p><strong>$O$ 的定义</strong>：若存在正常数 C 和自然数 N。使得当 $N\geq N_0$ 时有 $f(N)\leq C\cdot g(N)$ 则称函数 $f(N)$ 当 N 充分大时， $g(N)$ 是它的一个上界，即 $f(N)$ 的阶不高于 $g(N)$。</p>
+</li>
+<li><p><strong>$\Omega$ 的定义</strong>：若存在正常数 C 和自然数 N。使得当 $N\geq N_0$ 时有 $f(N)\geq C\cdot g(N)$ 则称函数 $f(N)$ 当 N 充分大时， $g(N)$ 是它的一个下界，即 $f(N)$ 的阶不低于 $g(N)$。</p>
+</li>
+<li><p><strong>$\theta$ 的定义</strong>：定义 $f(N) = \theta(g(n))$ 当且仅当 $f(N) = O(g(n))$ 且 $f(N) = \Omega (g(N))$ 即 $f(N)$ 与 $g(N)$ 同阶。</p>
+</li>
+<li><p>$O(f) + O(g) = O(max( f \cdot g))$</p>
+<p>$O(f) + O(g) = O(f + g)$</p>
+<p>$O(f) * O(g) = O(f \cdot g)$</p>
+<p>$若 g(N) = O(f(N))，则 O(f) + O(g) = O(\theta )$</p>
+</li>
+<li><p>基本效率类型</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">搜索</th>
+<th align="center">遍历</th>
+<th align="center">排序</th>
+<th align="center">2重循环</th>
+<th align="center">3重循环</th>
+<th align="center">求 n 个元素子集</th>
+<th align="center">求全排列</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$log_2n$</td>
+<td align="center">n</td>
+<td align="center">$n\cdot log_2n$</td>
+<td align="center">$n^2$</td>
+<td align="center">$n^3$</td>
+<td align="center">$2^n$</td>
+<td align="center">$n!$</td>
+</tr>
+<tr>
+<td align="center">3.3</td>
+<td align="center">10</td>
+<td align="center">3.3</td>
+<td align="center">$10^2$</td>
+<td align="center">$10^3$</td>
+<td align="center">$10^3$</td>
+<td align="center">$3.6\cdot 10^6$</td>
+</tr>
+<tr>
+<td align="center">6.6</td>
+<td align="center">100</td>
+<td align="center">$6.6 \times 10$</td>
+<td align="center">$10^4$</td>
+<td align="center">$10^6$</td>
+<td align="center">$1.3 \times 10^{30}$</td>
+<td align="center">$9.3 \times 10^{157}$</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">$10^3$</td>
+<td align="center">$1.0 \times 10^4$</td>
+<td align="center">$10^6$</td>
+<td align="center">$10^9$</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">$10^4$</td>
+<td align="center">$1.3 \times 10^5$</td>
+<td align="center">$10^8$</td>
+<td align="center">$10^{12}$</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">$10^5$</td>
+<td align="center">$1.7 \times 10^6$</td>
+<td align="center">$10^{10}$</td>
+<td align="center">$10^{15}$</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">$10^6$</td>
+<td align="center">$2.0 \times 10^7$</td>
+<td align="center">$10^{12}$</td>
+<td align="center">$10^{18}$</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="NP-完全性理论"><a href="#NP-完全性理论" class="headerlink" title="NP 完全性理论"></a>NP 完全性理论</h3><ol>
+<li>可能的下界<ol>
+<li>平凡下界</li>
+<li>信息论下界</li>
+</ol>
+</li>
+<li>NP完全性理论<ul>
+<li>P: 在确定计算模型下，多项式时间可解。</li>
+<li>NP: 在非确定计算模型下：<ol>
+<li>猜一个解。</li>
+<li>验证上面的解，在多项式时间完成。</li>
+</ol>
+</li>
+<li>NP-C: D 是 NPC，在 NP 问题集合中的任何一个问题都能够在多项式时间内被转化成 D。</li>
+<li>例子：<ol>
+<li>哈密顿回路</li>
+<li>旅行商问题</li>
+<li>背包问题</li>
+<li>划分问题</li>
+<li>装箱问题</li>
+<li>图着色问题</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="第二章-递归与分治"><a href="#第二章-递归与分治" class="headerlink" title="第二章 递归与分治"></a>第二章 递归与分治</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>&nbsp;&nbsp;直接或间接调用自身的算法</p>
+<ul>
+<li>优点 编码便利</li>
+<li>缺点 展开的代价巨大</li>
+</ul>
+<h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Algorithm/">Algorithm</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                      <a class="hover-with-bg" href="/tags/algorithm/">algorithm</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/09/11/Hexo-%E4%BD%BF%E7%94%A8-MathJax-%E6%B8%B2%E6%9F%93%E5%85%AC%E5%BC%8F%E5%B9%B6%E8%A7%A3%E5%86%B3%E6%B8%B2%E6%9F%93%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo 使用 MathJax 渲染公式并解决渲染冲突问题</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/03/%E5%9C%A8-Atom-%E4%B8%AD%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%B4%E6%88%B3/">
+                        <span class="hidden-mobile">在 Atom 中快速输入时间戳</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "算法设计与分析&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

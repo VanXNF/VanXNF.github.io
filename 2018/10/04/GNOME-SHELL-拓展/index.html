@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>GNOME SHELL 拓展 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2018-10-04 20:11" pubdate>
+      October 4, 2018 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      517 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">GNOME SHELL 拓展</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <blockquote>
+<p>在使用 Ubuntu 18.04 后发现了不少好用的 GNOME SHELL 拓展插件，在此做一个推荐及备份。以下插件排名不分先后。</p>
+</blockquote>
+<h1 id="system-monitor"><a href="#system-monitor" class="headerlink" title="system-monitor"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/120/system-monitor/">system-monitor</a></h1><blockquote>
+<p>Display system informations in gnome shell status bar, such as memory usage, cpu usage, network rates…</p>
+</blockquote>
+<p>&nsbp;&nbsp;在顶栏显示系统硬件状态，十分直观。在 Ubuntu 软件商店中即可安装，可能会遇到依赖问题，会有提示，按照具体提示安装即可，我当时提示缺少 Clutter，那就安装咯：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt-get install gir<span class="hljs-number">1</span>.<span class="hljs-number">2</span>-clutter-<span class="hljs-number">1</span>.<span class="hljs-number">0</span> gir<span class="hljs-number">1</span>.<span class="hljs-number">2</span>-clutter-gst-<span class="hljs-number">3</span>.<span class="hljs-number">0</span> gir<span class="hljs-number">1</span>.<span class="hljs-number">2</span>-gtkclutter-<span class="hljs-number">1</span>.<span class="hljs-number">0</span></code></pre>
+
+<h1 id="Clipboard-Indicator"><a href="#Clipboard-Indicator" class="headerlink" title="Clipboard Indicator"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/779/clipboard-indicator/">Clipboard Indicator</a></h1><blockquote>
+<p>Clipboard Manager extension for Gnome-Shell - Adds a clipboard indicator to the top panel, and caches clipboard history.</p>
+</blockquote>
+<p>&nbsp;&nbsp;剪贴板管理，在顶栏查看选择历史剪贴板。</p>
+<h1 id="Coverflow-Alt-Tab"><a href="#Coverflow-Alt-Tab" class="headerlink" title="Coverflow Alt-Tab"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/97/coverflow-alt-tab/">Coverflow Alt-Tab</a></h1><blockquote>
+<p>Replacement of Alt-Tab, iterates through windows in a cover-flow manner.</p>
+</blockquote>
+<h1 id="Dash-to-Dock"><a href="#Dash-to-Dock" class="headerlink" title="Dash to Dock"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/307/dash-to-dock/">Dash to Dock</a></h1><blockquote>
+<p>A dock for the Gnome Shell. This extension moves the dash out of the overview transforming it in a dock for an easier launching of applications and a faster switching between windows and desktops. Side and bottom placement options are available.</p>
+</blockquote>
+<p>&nbsp;&nbsp;取代系统 dock 栏。</p>
+<h1 id="Gnome-Shell-Audio-Output-Switcher"><a href="#Gnome-Shell-Audio-Output-Switcher" class="headerlink" title="Gnome Shell Audio Output Switcher"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/1028/gnome-shell-audio-output-switcher/">Gnome Shell Audio Output Switcher</a></h1><blockquote>
+<p>Gnome-Shell Extension: Easily switch between your audio outputs from the system menu.</p>
+</blockquote>
+<h1 id="Lock-Keys"><a href="#Lock-Keys" class="headerlink" title="Lock Keys"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/36/lock-keys/">Lock Keys</a></h1><blockquote>
+<p>Numlock &amp; Capslock status on the panel.</p>
+</blockquote>
+<h1 id="Multi-Monitors-Add-On"><a href="#Multi-Monitors-Add-On" class="headerlink" title="Multi Monitors Add-On"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/921/multi-monitors-add-on/">Multi Monitors Add-On</a></h1><blockquote>
+<p>Add multiple monitors overview and panel for gnome-shell.</p>
+</blockquote>
+<p>&nbsp;&nbsp;外接屏幕神器。</p>
+<h1 id="OpenWeather"><a href="#OpenWeather" class="headerlink" title="OpenWeather"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/750/openweather/">OpenWeather</a></h1><blockquote>
+<p>Weather extension to display weather information from <a target="_blank" rel="noopener" href="https://openweathermap.org/">https://openweathermap.org/</a> or <a target="_blank" rel="noopener" href="https://darksky.net/">https://darksky.net</a> for almost all locations in the world.<br>For openweathermap.org, you can either use the extensions default-key or register at <a target="_blank" rel="noopener" href="https://openweathermap.org/appid">https://openweathermap.org/appid</a> and set the appropriate switch in the preferences dialog to “off”.<br>For Dark Sky you have to register at <a target="_blank" rel="noopener" href="https://darksky.net/dev/register">https://darksky.net/dev/register</a> and get a personal API-key.<br>Since version 29 this extensions uses coordinates to store the locations and makes the names editable to support multiple weather-providers!<br>If you update from versions prior to 29 to 29 or greater (with darksky.net - support) you have to recreate your locations.</p>
+</blockquote>
+<h1 id="Pixel-Saver"><a href="#Pixel-Saver" class="headerlink" title="Pixel Saver"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/723/pixel-saver/">Pixel Saver</a></h1><blockquote>
+<p>Pixel Saver is designed to save pixel by fusing activity bar and title bar in a natural way.</p>
+</blockquote>
+<h1 id="Screenshot-Tool"><a href="#Screenshot-Tool" class="headerlink" title="Screenshot Tool"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/1112/screenshot-tool/">Screenshot Tool</a></h1><blockquote>
+<p>Conveniently create, copy, store and upload screenshots.</p>
+</blockquote>
+<h1 id="TopIcons-Plus"><a href="#TopIcons-Plus" class="headerlink" title="TopIcons Plus"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/1031/topicons/">TopIcons Plus</a></h1><blockquote>
+<p>This extension moves legacy tray icons (bottom left of Gnome Shell) to the top panel. It is a fork from the original extension from ag with settings for icon opacity, saturation, padding, size and tray position, along with a few minor fixes and integration with the Skype integration extension.</p>
+</blockquote>
+<h1 id="User-Themes"><a href="#User-Themes" class="headerlink" title="User Themes"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/19/user-themes/">User Themes</a></h1><blockquote>
+<p>Load shell themes from user directory.</p>
+</blockquote>
+<p>&nbsp;&nbsp;万物之源。</p>
+<h1 id="Suspend-Button"><a href="#Suspend-Button" class="headerlink" title="Suspend Button"></a><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/826/suspend-button/">Suspend Button</a></h1><blockquote>
+<p>Allows to modify the suspend/shutdown button in the status menu.</p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Software/">Software</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/GNOME/">GNOME</a>
+                    
+                      <a class="hover-with-bg" href="/tags/SHELL/">SHELL</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/04/Android-Studio-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E5%8C%85/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Android Studio 资源文件分包</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/30/Markdown-%E8%BD%AC%E6%8D%A2%E4%B8%BA-Word%E3%80%81Pdf-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                        <span class="hidden-mobile">Markdown 转换为 Word、Pdf 解决方案</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "GNOME SHELL 拓展&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
